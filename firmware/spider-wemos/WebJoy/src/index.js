@@ -8,8 +8,6 @@ let sender = new DelaySender(async v => {
     await fetchT(window.location.origin + '/xy?' + new URLSearchParams({ x: v.x, y: v.y }).toString(), {
         timeout: 1000,
     });
-    console.log(v);
-
 }, 50);
 
 function render() {
@@ -40,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     DragBlock(joy.$joy, e => {
         let s = joy.$svg.clientWidth;
-        if (e.touch && e.type == 'move') e.type = 'drag';
 
         switch (e.type) {
             case 'press':

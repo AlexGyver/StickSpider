@@ -1,5 +1,4 @@
 #include <Arduino.h>
-
 #include <GyverMotor2.h>
 GMotor2<DRIVER2WIRE_PWM_POWER> motorR(D1, D2);
 GMotor2<DRIVER2WIRE_PWM_POWER> motorL(D5, D6);
@@ -41,9 +40,9 @@ void setup() {
         }
     });
 
-    
-    motorL.setAccel(500);
-    motorR.setAccel(500);
+    motorL.setAccel(300);
+    motorR.setAccel(300);
+    analogWriteFreq(6000);
 }
 
 void loop() {

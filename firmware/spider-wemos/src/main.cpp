@@ -27,6 +27,10 @@ void setup() {
                 server.sendFile_P(webjoy_script_gz, sizeof(webjoy_script_gz), "text/javascript", true, true);
                 break;
 
+            case su::SH("/style.css"):
+                server.sendFile_P(webjoy_style_gz, sizeof(webjoy_style_gz), "text/css", true, true);
+                break;
+
             case SH("/xy"): {
                 int x = req.param("x");
                 int y = req.param("y");
